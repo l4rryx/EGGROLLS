@@ -11,9 +11,9 @@ def main():
     with open(sys.argv[1], encoding='utf-8') as f:
         row = int(f.readline())
         moves = int(f.readline())
-        level = [f.readline() for i in range(row)]
+        level = [f.readline().strip() for i in range(row)]
         clear_screen()
-        print(*level)
+        print(*level, sep="\n")
         stats_and_input(moves, '', 0, level)
 
 def stats_and_input(moves, prev_moves, curr_points, level):
